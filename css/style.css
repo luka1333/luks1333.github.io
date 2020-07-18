@@ -1,0 +1,22 @@
+th {
+    color: black;
+    height: 40px;
+}
+
+ table, th, td {
+     border: 1px solid black;
+     border-collapse: collapse;
+}
+
+body{
+    width: 100%;
+
+}
+
+table{
+    width: 20px;
+
+
+}
+
+

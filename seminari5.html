@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminari5</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+
+
+    <table class="table">
+        <tr class="table-name">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>color</th>
+            <th>value</th>
+        </tr>
+
+        <tbody id="lebovski">
+
+        </tbody>
+    </table>
+
+    <script>
+        var mylist = [
+            { 'id': '1', 'name': 'cerulean', 'year': '2000', 'color': '#98B2D1', 'value': '15-4020' },
+            { 'id': '2', 'name': 'fuchsia rose', 'year': '2001', 'color': '#C74375', 'value': '17-2031' },
+            { 'id': '3', 'name': 'true red', 'year': '2002', 'color': '#BF1932', 'value': '19-1664' },
+            { 'id': '4', 'name': 'aqua sky', 'year': '2003', 'color': '#7BC4C4', 'value': '14-4811' },
+            { 'id': '5', 'name': 'tigerlily', 'year': '2004', 'color': '#E2583E', 'value': '17-1456' },
+            { 'id': '6', 'name': 'blue turquoise', 'year': '2005', 'color': '#53B0AE', 'value': '15-5217' },
+
+        ]
+
+        buildTable(mylist)
+
+
+
+        function buildTable(data) {
+            var table = document.getElementById('lebovski')
+
+            for (var i = 0; i < data.length; i++) {
+                var row = `<tr>
+							<td>${data[i].id}</td>
+							<td>${data[i].name}</td>
+							<td>${data[i].year}</td>
+                            <td>${data[i].color}</td>
+                            <td>${data[i].value}</td>
+					  </tr>`
+                table.innerHTML += row
+
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

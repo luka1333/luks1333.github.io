@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">  
+    <head>
+
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>info</title>
+        <link rel="stylesheet" href="style.css">
+
+
+    </head>
+    <body>
+  <section id="sec">
+    	    <table id="table">
+        <tr id="table-name">
+            <td id="th">ID</td>
+        
+            <td id="th">Name</td>
+        
+            <td id="th">Birthday</td>
+        
+            <td id="th">color</td>
+     
+            <td id="th">value</td>
+        </tr>
+    </table>
+    </section>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <div id="request"></div> 
+
+        <script>
+
+
+        function getUsers() {
+            function render() {
+                let response = this.responseText;
+                let responseData = JSON.parse(response);
+                console.log(responseData);
+        
+                let ul = document.createElement('sec');
+                responseData.data.forEach(item => {
+                    let li = document.createElement('table');
+                    li.textContent =  item.id;
+                    
+                    ul.appendChild(li);
+                }); 
+                 responseData.data.forEach(item => {
+                    let li = document.createElement('table');
+                    li.textContent =  item.name;
+                    ul.appendChild(li);
+                });
+
+                document.getElementById('request').appendChild(ul);
+            }
+            
+            let req = new XMLHttpRequest();
+            req.addEventListener('load', render);
+
+            req.open('GET','https://reqres.in/api/unknown');
+            req.send();
+            
+        }
+        getUsers();
+   
+
+    </script>
+    </body>
+    </html>
